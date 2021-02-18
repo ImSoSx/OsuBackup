@@ -77,7 +77,7 @@ namespace OsuBackup
         private void autoBackup_btn_Click(object sender, EventArgs e)
         {
             //Use the defaut osu location
-            string osuGame = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\osulazer";
+            string osuGame = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\osulazer";
             string osuData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\osu";
             autoBackup_btn.Enabled = false;
             backupData_btn.Enabled = false;
@@ -382,7 +382,7 @@ namespace OsuBackup
             restoreData_btn.Enabled = false;
             backupGame_btn.Enabled = false;
             backupData_btn.Enabled = false;
-            string osuGame = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string osuGame = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             using (ZipFile zip = ZipFile.Read(Environment.CurrentDirectory + @"\OsuGameBackup.zip"))
             {
                 totalFiles = zip.Count;
